@@ -10,7 +10,7 @@ A collection of code samples demonstrating OIDC and SAML2 authentication impleme
 
 ## Directory Structure
 
-```
+```plaintext
 ├── oidc/
 │   ├── javascript/
 │   │   ├── frontend/
@@ -27,10 +27,16 @@ A collection of code samples demonstrating OIDC and SAML2 authentication impleme
 │   ...
 ```
 
+## Internal links
+
+For OIDC:
+
+- [C - Apache :: mod_auth_openidc](./oidc/c-apache/mod_auth_openidc/README.md)
+- [Python - Django :: mozilla-django-oidc](./oidc/python/django/mozilla-django-oidc/README.md)
+
 ## Security Note
 
 These samples demonstrate authentication flows. Review and enhance security measures before deploying to production.
-
 
 ## Additional Resources
 
