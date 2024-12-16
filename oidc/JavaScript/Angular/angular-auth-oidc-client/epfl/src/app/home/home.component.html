@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="column">
+            <button type="button" class="btn btn-primary" *ngIf="!isAuthenticated" (click)="login()">Login</button>
+            <button type="button" class="btn btn-primary" *ngIf="isAuthenticated" (click)="logout()">Logout</button>
+        </div> 
+    </div>
+    <div class="row">
+        <div class="column">
+            <pre>{{ userData$ | async | json }}</pre>
+        </div>
+    </div>
+</div>
