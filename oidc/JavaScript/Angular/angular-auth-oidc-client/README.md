@@ -24,7 +24,7 @@ client_id: 'your_client_id',
 
 ## Installation
 
-1. Download the [latest release](https://github.com/OpenIDC/mod_auth_openidc/releases)
+1. Download the [latest release](https://github.com/damienbod/angular-auth-oidc-client/releases)
 2. Install the package for your OS:
 
    ```bash
