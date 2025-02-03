@@ -46,7 +46,12 @@ Example: see example projet (folder epfl).
 Enable debugging:
 
 ```typescript
-logLevel: LogLevel.Debug,
+export const authConfig: PassedInitialConfig = {
+  config: {
+      // ...
+      logLevel: LogLevel.Debug,
+    }
+}
 ```
 ### Standalone
 
