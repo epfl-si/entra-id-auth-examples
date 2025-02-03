@@ -14,7 +14,7 @@ class HomeController extends AbstractController
     #[Route('/home', name: 'app_home')]
     public function home(Request $request): Response
     {
-        $oidc = new OpenIDConnectClient('https://login.microsoftonline.com/' . $_ENV['TENANT_ID'], $_ENV['CLIENT_ID'], $_ENV['CLIENT_SECRET']);
+        $oidc = new OpenIDConnectClient($_ENV['AUTH_URL'], $_ENV['CLIENT_ID'], $_ENV['CLIENT_SECRET']);
         $oidc->setRedirectURL($_ENV['OIDC_REDIRECT_URI']);
     
         $oidc->authenticate();
