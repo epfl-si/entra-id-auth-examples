@@ -24,8 +24,7 @@ client_id: 'your_client_id',
 
 ## Installation
 
-1. Download the [latest release](https://github.com/damienbod/angular-auth-oidc-client/releases)
-2. Install the package for your OS:
+1. Install the package:
 
    ```bash
    ng add angular-auth-oidc-client
