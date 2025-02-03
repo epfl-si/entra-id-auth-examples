@@ -44,6 +44,9 @@ You can install the oauth4webapi using npm:
 ```bash
 npm install oauth4webapi
 ```
+## Configuration
+
+You can find 2 examples whether you use [authorization code flow](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow#how-authorization-code-flow-works) or [client credentials flow](https://auth0.com/docs/get-started/authentication-and-authorization-flow/client-credentials-flow).
 
 ## Documentation
 
