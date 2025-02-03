@@ -10,5 +10,4 @@ import { OidcSecurityService } from 'angular-auth-oidc-client';
 })
 export class AppComponent {
   title = 'epfl';
-  //private readonly oidcSecurityService = inject(OidcSecurityService);
 }
