@@ -18,7 +18,7 @@ cd entra-id-auth-examples/oidc/PHP/Jumbojett-OIDC/php-oidc-jumbojett
 In ./.env
 
 ```bash
-TENANT_ID= "your_tenant_id",
+AUTH_URL= "your_auth_url",
 CLIENT_ID= "your_client_id"
 CLIENT_SECRET= "your_client_secret"
 OIDC_REDIRECT_URI= "your_redirect_uri"
@@ -35,8 +35,20 @@ OIDC_REDIRECT_URI= "your_redirect_uri"
 
 ## Configuration
 
-Example: see example projet (folder epfl).
+Example: see example projet for symfony.
+
+```php
+   $oidc = new OpenIDConnectClient($_ENV['AUTH_URL'], $_ENV['CLIENT_ID'], $_ENV['CLIENT_SECRET']);
+   $oidc->setRedirectURL($_ENV['OIDC_REDIRECT_URI']);
+   $oidc->addScope(['openid', 'profile', 'email']);
+
+   $oidc->authenticate();
+   $userInfo = $oidc->requestUserInfo();
+
+   $session = $request->getSession();
+   $session->set('user_info', $userInfo);
+```
 
 ## Documentation
 
-- [Official Documentation]((https://github.com/jumbojett/OpenID-Connect-PHP/)
+- [Official Documentation](https://github.com/jumbojett/OpenID-Connect-PHP/)
