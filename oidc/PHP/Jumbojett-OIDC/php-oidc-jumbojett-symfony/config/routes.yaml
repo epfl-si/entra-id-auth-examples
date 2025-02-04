@@ -1,0 +1,13 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+app_login:
+    path: /
+    controller: App\Controller\LoginController::login
+
+app_home:
+    path: /home
+    controller: App\Controller\HomeController::home
