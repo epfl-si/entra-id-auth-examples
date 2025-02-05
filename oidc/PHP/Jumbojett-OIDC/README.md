@@ -33,6 +33,9 @@ OIDC_REDIRECT_URI= "your_redirect_uri"
    composer require jumbojett/openid-connect-php
    ```
 
+   Or you can install it inside your vendor directory and use it directly without composer.
+
+
 ## Configuration
 
 Example: see example projet for symfony.
