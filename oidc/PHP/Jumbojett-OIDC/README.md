@@ -1,8 +1,10 @@
 # OpenID-Connect-PHP
+
 Open Source implementation of OpenID Connect for PHP applications.
 Tested with PHP 8.4.1 and composer 2.8.4
 
 ## Try this repository in your local environment
+
 1. Clone the repository:
 
 ```bash
@@ -10,6 +12,7 @@ git clone https://github.com/epfl-si/entra-id-auth-examples.git
 ```
 
 2. Change to the repository directory:
+
 ```bash
 cd entra-id-auth-examples/oidc/PHP/Jumbojett-OIDC/php-oidc-jumbojett
 ```
@@ -30,15 +33,15 @@ OIDC_REDIRECT_URI= "your_redirect_uri"
 2. Install the library using composer:
 
    ```bash
-   composer require jumbojett/openid-connect-php
+   composer require jumbojett/openid-connect-php "^VERSION"
    ```
 
    Or you can install it inside your vendor directory and use it directly without composer.
 
-
 ## Configuration
 
-Example: see example projet for symfony.
+Example: php-oidc-jumbojett-symfony is an example of OpenID-Connect-PHP
+in Symfony framework.
 
 ```php
    $oidc = new OpenIDConnectClient($_ENV['AUTH_URL'], $_ENV['CLIENT_ID'], $_ENV['CLIENT_SECRET']);
@@ -51,6 +54,9 @@ Example: see example projet for symfony.
    $session = $request->getSession();
    $session->set('user_info', $userInfo);
 ```
+
+Another example: php-oidc-jumbojett-simple is an example of
+OpenID-Connect-PHP without any framework.
 
 ## Documentation
 
