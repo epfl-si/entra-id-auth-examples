@@ -24,17 +24,35 @@ Open Source implementation of OpenID Connect for NodeJS x Express applications.
 
 4. Configure environment variables:
 
+   For authorization code flow:
+
    ```bash
    AUTH_URL = 'your_auth_url'
    CLIENT_ID = 'your_client_id'
    CLIENT_SECRET = 'your_client_secret'
    REDIRECT_URI = 'your_redirect_uri'
+   SCOPE = 'https://graph.microsoft.com/.default'
+   ```
+
+   For client credentials flow:
+
+   ```bash
+   AUTH_URL = 'your_auth_url'
+   CLIENT_ID = 'your_client_id'
+   CLIENT_SECRET = 'your_client_secret'
+   SCOPE = 'https://graph.microsoft.com/.default'
    ```
 
 5. Run the server:
 
    ```bash
-   node index.js
+   node index_client_credential_flow.js
+   ```
+
+   or
+
+   ```bash
+   node index_authorization_code_flow.js
    ```
 
 ## Installation
@@ -44,6 +62,7 @@ You can install the oauth4webapi using npm:
 ```bash
 npm install oauth4webapi
 ```
+
 ## Configuration
 
 You can find 2 examples whether you use [authorization code flow](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow#how-authorization-code-flow-works) or [client credentials flow](https://auth0.com/docs/get-started/authentication-and-authorization-flow/client-credentials-flow).
