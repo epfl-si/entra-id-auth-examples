@@ -61,6 +61,13 @@ You can install the library using pip:
 pip install Flask-OIDC
 ```
 
+## Limitation due to Entra ID
+
+Entra ID does not support introspection for token validation.
+This library use only introspection to validate token when [protecting API](https://flask-oidc.readthedocs.io/en/latest/#resource-server).
+
+The current documentation only provides examples for web-based authentication flows where the application handles the OAuth/OIDC redirect flow directly. This limits users who need to implement other authentication patterns.
+
 ## Configuration
 
 All configuration references are available on [official documentation](https://flask-oidc.readthedocs.io/en/latest/#settings-reference)
