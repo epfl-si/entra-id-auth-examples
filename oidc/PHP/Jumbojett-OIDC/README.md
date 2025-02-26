@@ -25,18 +25,6 @@ cd entra-id-auth-examples/oidc/PHP/Jumbojett-OIDC/php-oidc-jumbojett-symfony
 
 3. Configure environment variables:
 
-a. If you want to use the simple example:
-
-In ./auth/callback.php
-```bash
-TENANT_ID= "your_tenant_id",
-CLIENT_ID= "your_client_id"
-CLIENT_SECRET= "your_client_secret"
-malocation= "your_domain"
-```
-
-b. If you want to use the symfony example:
-
 In ./.env
 ```bash
 AUTH_URL= "your_auth_url",
@@ -55,6 +43,11 @@ OIDC_REDIRECT_URI= "your_redirect_uri"
    ```
 
    Or you can install it inside your vendor directory and use it directly without composer.
+
+For the simple example you will need to install phpdotenv using composer:
+   ```bash
+   composer require vlucas/phpdotenv
+   ```
 
 ## Configuration
 
