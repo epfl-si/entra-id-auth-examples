@@ -19,19 +19,29 @@ a. If you want to use the simple example:
 cd entra-id-auth-examples/oidc/PHP/Jumbojett-OIDC/php-oidc-jumbojett-simple
 ```
 
-For the simple example you will need to install phpdotenv using composer:
-
-   ```bash
-   composer require vlucas/phpdotenv
-   ```
-
 b. If you want to use the symfony example:
 
 ```bash
 cd entra-id-auth-examples/oidc/PHP/Jumbojett-OIDC/php-oidc-jumbojett-symfony
 ```
 
-3. Configure environment variables:
+3. Install dependencies
+
+You will need to install dependencies using composer:
+
+```bash
+composer install
+```
+
+You will need to activate curl on your php installation too.
+
+On ubuntu:
+
+```bash
+sudo apt install php-curl
+```
+
+4. Configure environment variables:
 
 In ./.env
 
