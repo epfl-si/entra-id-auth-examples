@@ -14,11 +14,19 @@ git clone https://github.com/epfl-si/entra-id-auth-examples.git
 2. Change to the repository directory:
 
 a. If you want to use the simple example:
+
 ```bash
 cd entra-id-auth-examples/oidc/PHP/Jumbojett-OIDC/php-oidc-jumbojett-simple
 ```
 
+For the simple example you will need to install phpdotenv using composer:
+
+   ```bash
+   composer require vlucas/phpdotenv
+   ```
+
 b. If you want to use the symfony example:
+
 ```bash
 cd entra-id-auth-examples/oidc/PHP/Jumbojett-OIDC/php-oidc-jumbojett-symfony
 ```
@@ -26,6 +34,7 @@ cd entra-id-auth-examples/oidc/PHP/Jumbojett-OIDC/php-oidc-jumbojett-symfony
 3. Configure environment variables:
 
 In ./.env
+
 ```bash
 AUTH_URL= "your_auth_url",
 CLIENT_ID= "your_client_id"
@@ -43,11 +52,6 @@ OIDC_REDIRECT_URI= "your_redirect_uri"
    ```
 
    Or you can install it inside your vendor directory and use it directly without composer.
-
-For the simple example you will need to install phpdotenv using composer:
-   ```bash
-   composer require vlucas/phpdotenv
-   ```
 
 ## Configuration
 
