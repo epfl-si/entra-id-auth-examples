@@ -11,20 +11,18 @@ Apache 2.4 module implementing OpenID Connect Relying Party and OAuth 2.0 Resour
    sudo apt install libapache2-mod-auth-openidc
    ```
 
-### Manual Installation
+### Manual Installation (Ubuntu/Debian)
 
-1. Get your distribution release:
+1. Get your release code name:
 
    ```bash
    lsb_release --codename
    ```
 
-   For Ubuntu/Debian based distribution.
-2. Download the [latest release](https://github.com/OpenIDC/mod_auth_openidc/releases) based on your distribution
-3. Install the package for your OS:
+2. Download the [latest release](https://github.com/OpenIDC/mod_auth_openidc/releases) based on your code name
+3. Install the package on your OS:
 
    ```bash
-   # Debian/Ubuntu
    sudo apt install ./libapache2-mod-auth-openidc.{OS_CODENAME}_amd64.deb
    ```
 
