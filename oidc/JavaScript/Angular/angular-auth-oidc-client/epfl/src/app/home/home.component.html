@@ -1,13 +1,21 @@
 <div class="container">
     <div class="row text-center">
         <div class="column">
-            <button type="button" class="btn btn-primary" *ngIf="!isAuthenticated" (click)="login()">Login</button>
-            <button type="button" class="btn btn-primary" *ngIf="isAuthenticated" (click)="logout()">Logout</button>
-        </div> 
+            @if (isAuthenticated) {
+            <button type="button" class="btn btn-primary" (click)="logout()">Logout</button>
+            } @else {
+            <button type="button" class="btn btn-primary" (click)="login()">Login</button>
+            }
+        </div>
     </div>
     <div class="row">
+        @if (isAuthenticated) {
         <div class="column">
+            <p>Private information: <a routerLink="/private">private page</a></p>
             <pre>{{ userData$ | async | json }}</pre>
         </div>
+        } @else {
+        <p>Welcome to my public page. <a routerLink="/private">Try the private page</a></p>
+        }
     </div>
 </div>

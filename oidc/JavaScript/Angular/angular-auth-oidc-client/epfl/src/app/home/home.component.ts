@@ -1,24 +1,34 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { AsyncPipe, JsonPipe } from '@angular/common';
+import { Component, OnDestroy, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { OidcSecurityService } from 'angular-auth-oidc-client';
-import { JsonPipe, AsyncPipe, NgIf } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
-  imports: [AsyncPipe, JsonPipe, NgIf],
+  imports: [AsyncPipe, JsonPipe, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnDestroy {
   private readonly oidcSecurityService = inject(OidcSecurityService);
   isAuthenticated = false;
   userData$ = this.oidcSecurityService.userData$;
 
-  ngOnInit(): void {
-    this.oidcSecurityService.isAuthenticated$.subscribe(
+  subscription: Subscription;
+
+  constructor() {
+    this.subscription = this.oidcSecurityService.isAuthenticated$.subscribe(
       ({ isAuthenticated }) => {
         this.isAuthenticated = isAuthenticated;
       }
-    );  
+    );
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   login(): void {
