@@ -19,7 +19,7 @@ Tested with Angular v19 and angular-auth-oidc-client v19.
 2. Change to the repository directory:
 
     ```bash
-    cd entra-id-auth-examples/oidc/JavaScript/Angular/angular-auth-oidc-client
+    cd entra-id-auth-examples/oidc/javascript/angular/angular-auth-oidc-client
     ```
 
 3. Install the dependencies:
