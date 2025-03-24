@@ -7,50 +7,50 @@ Tested with PHP 8.4.1 and composer 2.8.4
 
 1. Clone the repository:
 
-```bash
-git clone https://github.com/epfl-si/entra-id-auth-examples.git
-```
+   ```bash
+   git clone https://github.com/epfl-si/entra-id-auth-examples.git
+   ```
 
 2. Change to the repository directory:
 
-a. If you want to use the simple example:
+   a. If you want to use the simple example:
 
-```bash
-cd entra-id-auth-examples/oidc/PHP/Jumbojett-OIDC/php-oidc-jumbojett-simple
-```
+   ```bash
+   cd entra-id-auth-examples/oidc/PHP/Jumbojett-OIDC/php-oidc-jumbojett-simple
+   ```
 
-b. If you want to use the symfony example:
+   b. If you want to use the symfony example:
 
-```bash
-cd entra-id-auth-examples/oidc/PHP/Jumbojett-OIDC/php-oidc-jumbojett-symfony
-```
+   ```bash
+   cd entra-id-auth-examples/oidc/PHP/Jumbojett-OIDC/php-oidc-jumbojett-symfony
+   ```
 
 3. Install dependencies
 
-You will need to install dependencies using composer:
+   You will need to install dependencies using composer:
 
-```bash
-composer install
-```
+   ```bash
+   composer install
+   ```
 
-You will need to activate curl on your php installation too.
+   You will need to activate curl on your php installation too.
 
-On ubuntu:
+   On ubuntu:
 
-```bash
-sudo apt install php-curl
-```
+   ```bash
+   sudo apt install php-curl
+   ```
 
 4. Configure environment variables:
 
-In ./.env
+   In ./.env
 
-```bash
-AUTH_URL= "your_auth_url",
-CLIENT_ID= "your_client_id"
-CLIENT_SECRET= "your_client_secret"
-OIDC_REDIRECT_URI= "your_redirect_uri"
-```
+   ```bash
+   AUTH_URL= "your_auth_url",
+   CLIENT_ID= "your_client_id"
+   CLIENT_SECRET= "your_client_secret"
+   OIDC_REDIRECT_URI= "your_redirect_uri"
+   ```
 
 ## Installation
 
