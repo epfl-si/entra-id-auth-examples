@@ -83,6 +83,18 @@ in Symfony framework.
 Another example: `php-oidc-jumbojett-simple` is an example of
 OpenID-Connect-PHP without any framework.
 
+### Logout
+
+As session is utilized to store user information after login process, to logout the user you must clear the session:
+
+```php
+session_start();
+
+$_SESSION = array();
+
+// Then redirect with header location or other code..
+```
+
 ## Documentation
 
 - [Official Documentation](https://github.com/jumbojett/OpenID-Connect-PHP/)
