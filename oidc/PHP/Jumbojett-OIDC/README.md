@@ -65,7 +65,7 @@ Tested with PHP 8.4.1 and composer 2.8.4
 
 ## Configuration
 
-Example: php-oidc-jumbojett-symfony is an example of OpenID-Connect-PHP
+Example: `php-oidc-jumbojett-symfony` is an example of OpenID-Connect-PHP
 in Symfony framework.
 
 ```php
@@ -80,7 +80,7 @@ in Symfony framework.
    $session->set('user_info', $userInfo);
 ```
 
-Another example: php-oidc-jumbojett-simple is an example of
+Another example: `php-oidc-jumbojett-simple` is an example of
 OpenID-Connect-PHP without any framework.
 
 ## Documentation
