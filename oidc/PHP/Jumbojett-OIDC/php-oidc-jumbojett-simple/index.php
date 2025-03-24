@@ -1,11 +1,15 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
+
 use Jumbojett\OpenIDConnectClient;
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 session_start(); 
 
 if (!isset($_SESSION['user'])){
-    header("Location: http://localhost:8000/callback.php");
+    header("Location: ".$_ENV['OIDC_REDIRECT_URI']);
     exit();
 }
 

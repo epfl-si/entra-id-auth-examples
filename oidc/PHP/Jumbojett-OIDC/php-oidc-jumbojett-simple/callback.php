@@ -1,8 +1,10 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
+
+use Jumbojett\OpenIDConnectClient;
+
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
-use Jumbojett\OpenIDConnectClient;
 
 session_start();
 
