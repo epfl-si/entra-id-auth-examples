@@ -85,15 +85,26 @@ OpenID-Connect-PHP without any framework.
 
 ### Logout
 
-As session is utilized to store user information after login process, to logout the user you must clear the session:
+As session is used to store user information after login process, to logout the user you must clear the session:
 
 ```php
+<?php
+// Initialize the session.
+// If you are using session_name("something"), don't forget it now!
 session_start();
 
+// Unset all of the session variables.
 $_SESSION = array();
 
+// Finally, destroy the session.
+session_destroy();
+
 // Then redirect with header location or other code..
+?>
+
 ```
+
+This process kills and cleans up the user's session on the server. As it is, the user will still be connected to the IDP.
 
 ## Documentation
 
