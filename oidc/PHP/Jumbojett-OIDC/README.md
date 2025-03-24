@@ -69,15 +69,15 @@ Example: `php-oidc-jumbojett-symfony` is an example of OpenID-Connect-PHP
 in Symfony framework.
 
 ```php
-   $oidc = new OpenIDConnectClient($_ENV['AUTH_URL'], $_ENV['CLIENT_ID'], $_ENV['CLIENT_SECRET']);
-   $oidc->setRedirectURL($_ENV['OIDC_REDIRECT_URI']);
-   $oidc->addScope(['openid', 'profile', 'email']);
+$oidc = new OpenIDConnectClient($_ENV['AUTH_URL'], $_ENV['CLIENT_ID'], $_ENV['CLIENT_SECRET']);
+$oidc->setRedirectURL($_ENV['OIDC_REDIRECT_URI']);
+$oidc->addScope(['openid', 'profile', 'email']);
 
-   $oidc->authenticate();
-   $userInfo = $oidc->requestUserInfo();
+$oidc->authenticate();
+$userInfo = $oidc->requestUserInfo();
 
-   $session = $request->getSession();
-   $session->set('user_info', $userInfo);
+$session = $request->getSession();
+$session->set('user_info', $userInfo);
 ```
 
 Another example: `php-oidc-jumbojett-simple` is an example of
