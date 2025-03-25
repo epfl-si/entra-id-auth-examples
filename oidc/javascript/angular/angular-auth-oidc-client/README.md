@@ -203,26 +203,6 @@ When implementing authentication in your own application, you should:
 
 Refer to the example project files for implementation details and patterns to follow in your own application.
 
-## Authentication Storage
-
-The angular-auth-oidc-client uses SessionStorage by default to store tokens.
-
-If you prefer using localStorage instead (for persistence across browser sessions):
-
-```typescript
-// src/app/auth/auth.config.ts
-import { LogLevel, PassedInitialConfig, StoragePersistenceService } from 'angular-auth-oidc-client';
-
-export const authConfig: PassedInitialConfig = {
-  config: {
-    // ... other settings
-    storage: new StoragePersistenceService('localStorage'),
-  }
-};
-```
-
-This is less secure !
-
 ## Troubleshooting
 
 ### Common Issues and Solutions
