@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     @property
     def SCOPES(self) -> dict:
         return {
-            self.SCOPE_NAME: self.SCOPE_DESCRIPTION,
+            self.SCOPE_NAME: self.SCOPE_DESCRIPTION
         }
 
     class Config:
@@ -43,7 +43,7 @@ app = FastAPI(
     swagger_ui_oauth2_redirect_url='/oauth2-redirect',
     swagger_ui_init_oauth={
         'usePkceWithAuthorizationCodeGrant': True,
-        'clientId': settings.APP_CLIENT_ID
+        'clientId': settings.OPENAPI_CLIENT_ID
     },
     dependencies=[Security(azure_scheme)]
 )
