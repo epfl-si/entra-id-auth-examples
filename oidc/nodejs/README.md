@@ -6,7 +6,7 @@ Open Source implementation of OpenID Connect for NodeJS applications using the l
 
 - Node.js 14.x or higher
 - NPM or another package manager
-- A Microsoft Entra ID tenant with administrator access
+- A access to App Portal
 
 ## Try this repository in your local environment
 
@@ -99,25 +99,23 @@ The Client Credentials Flow is used for service-to-service authentication where 
   - Acquires tokens directly without user interaction
   - Demonstrates API access with the acquired token
 
-## Configuring Entra ID
+## Configuring App Portal
 
 Use the App Portal of EPFL to create and manage your applications.
 
-For an angular application, select `Web` application as application type.
+For an a nodejs application, select `Web` application as application type.
 
-To use these examples, you need to register your application in Microsoft Entra ID:
+To use these examples, you need to register your application in App Portal:
 
 1. **For Authorization Code Flow:**
    - Register a web application as `Web`
    - Configure redirect URIs
-   - Generate a client secret
+   - Generate a client secret (automatically created at applicatiob creation)
    - Configure appropriate API permissions
 
 2. **For Client Credentials Flow:**
-   - Register an application `Web` can be utilized
-   - Generate a client secret
-   - Configure application permissions (not delegated)
-   - Grant admin consent for the permissions (ask admin)
+   - Register an application: `Web` type can be utilized
+   - Generate a client secret (automatically created at applicatiob creation)
 
 ## Troubleshooting
 
