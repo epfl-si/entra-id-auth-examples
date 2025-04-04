@@ -75,9 +75,11 @@ $oidc->addScope(['openid', 'profile', 'email']);
 
 $oidc->authenticate();
 $userInfo = $oidc->requestUserInfo();
+$claims = $oidc->getVerifiedClaims();
 
 $session = $request->getSession();
 $session->set('user_info', $userInfo);
+$session->set('claims', $claims);
 ```
 
 Another example: `php-oidc-jumbojett-simple` is an example of

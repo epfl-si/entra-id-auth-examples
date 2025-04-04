@@ -13,6 +13,9 @@ if (!isset($_SESSION['user'])){
     exit();
 }
 
+echo "====== VERIFIED CLAIMS ======\n";
+print_r($_SESSION['claims']);
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">

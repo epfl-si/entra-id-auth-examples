@@ -24,6 +24,10 @@ $oidc->authenticate();
 $userInfo = $oidc->requestUserInfo();
 $_SESSION['user'] = $userInfo;
 
+//Retrieve and store the claims
+$claims = $oidc->getVerifiedClaims();
+$_SESSION['claims'] = $claims;
+
 header("Location: http://localhost:8000/index.php");
 exit();
 ?>
