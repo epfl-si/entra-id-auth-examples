@@ -36,6 +36,23 @@ Enable debugging:
 LogLevel debug auth_openidc:trace8
 ```
 
+If you want to restrict the access to a certain directory, you can require specific claim values:
+```apache
+AuthType openid-connect
+OIDCCookie oidcstate
+OIDCCookiePath "/"
+Require claim [claim_name]: [claim_value]
+```
+For example:
+```apache
+AuthType openid-connect
+OIDCCookie oidcstate
+OIDCCookiePath "/"
+Require claim groups:EPFL_Group
+```
+We recommend to use these configurations in the main server configuration file.
+If the server configuration file can't be accessed, the configuration can be done in .htaccess files (see [Apache documentation](https://httpd.apache.org/docs/2.4/en/howto/htaccess.html#when)).
+
 ## Authentication Info Endpoints
 
 The module exposes authentication information through these endpoints:
