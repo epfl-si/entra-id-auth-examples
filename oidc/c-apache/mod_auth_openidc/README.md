@@ -43,7 +43,7 @@ OIDCCookie oidcstate
 OIDCCookiePath "/"
 Require claim [claim_name]: [claim_value]
 ```
-For example:
+For example, to restrict the access of the directory to the group "EPFL_Group":
 ```apache
 AuthType openid-connect
 OIDCCookie oidcstate
