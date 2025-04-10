@@ -111,3 +111,4 @@ This process kills and cleans up the user's session on the server. As it is, the
 ## Documentation
 
 - [Official Documentation](https://github.com/jumbojett/OpenID-Connect-PHP/)
+- [Migration example from Tequila (PHP Client) to Entra](php-oidc-jumbojett-simple/TEQUILA_MIGRATION_EXAMPLE.md)
