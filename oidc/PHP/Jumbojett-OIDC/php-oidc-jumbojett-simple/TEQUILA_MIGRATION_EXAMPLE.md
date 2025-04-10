@@ -119,7 +119,7 @@ This will have to be replaced with the following (note that some previous option
 session_start(); 
 if (!isset($_SESSION['user']))
 {
-    header("Location: ".$_ENV['ENTRA_REDIRECT_URL']);
+    header("Location: ".$_ENV['OIDC_REDIRECT_URI']);
     exit();
 }
 
@@ -127,7 +127,7 @@ if (!isset($_SESSION['user']))
 define('USER_EMAIL', $_SESSION["user"]->email);
 define('USER_SCIPER', $_SESSION["claims"]->uniqueid);
 define('USER_FULL_NAME',  $_SESSION["user"]->name);
-// We'll recreate the string with group names separated by commas and remove "_AppGrpU" suffix (because Entra will return AD Groups corresponding to https://groups.epfl.ch groups, and they doesn't have the same name)
+// We'll recreate the string with group names separated by commas and remove "_AppGrpU" suffix for each group (because Entra will return AD Groups corresponding to https://groups.epfl.ch groups, and they doesn't have the same name)
 $group_list = array();
 foreach ($_SESSION["claims"]->groups as $ad_group_name)
 {
