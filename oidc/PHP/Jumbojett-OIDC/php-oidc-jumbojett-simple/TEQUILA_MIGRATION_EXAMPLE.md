@@ -22,13 +22,11 @@ For the given example, the website has a single `index.php` page through which e
 
 Go on http://app-portal.epfl.ch and choose to create a new application.
 
-Information you have to give are pretty obvious but here are some information about some of them.
+Information you have to give are pretty obvious but Here is some additional information about the values needed in the app-portal.
 
-**Application Type:** you'll have to choose `Web App` for your website to work correctly.
-
-**Application redirect URLs:** In our case it will be something like `http://<mywebsite>/entra/entra.php`.
-
-**Additionnal authorized Groups:** Here, add all the groups you'll need to know if the user is part of them.
+- **Application Type:** you'll have to choose `Web App` for your website to work correctly.
+- **Application redirect URLs:** In our case it will be something like `http://<mywebsite>/entra/entra.php`.
+- **Additionnal authorized Groups:** Here, add all the groups you'll need to know if the user is part of them.
 
 When you submit the form for application creation, you'll get several information, and also a "client secret" that you'll have to store somewhere.
 
@@ -92,7 +90,7 @@ exit;
 
 ### Website root page (index.php)
 
-Look into thyour existing `index.php` file to find the section with Tequila part. In our example, let's say that we have the following code for Tequila
+Look into your existing `index.php` file to find the section with Tequila part. In our example, let's say that we have the following code for Tequila
 
 ```php
 // Authentication
