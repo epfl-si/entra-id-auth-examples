@@ -25,11 +25,14 @@ Implementation of OIDC and OAuth2 flow inside FastAPI.
 4. Configure environment variables:
 
    ```bash
-   TENANT_ID=
-   APP_CLIENT_ID=
-   OPENAPI_CLIENT_ID=
+   TENANT_ID=your_tenant_id
+   APP_CLIENT_ID=your_client_id
+   OPENAPI_CLIENT_ID=your_openapi_client_id
    ```
-Update `.env` file to adapt these variables.
+
+   Update `.env` file to adapt these variables.
+
+   `APP_CLIENT_ID` must be the Client ID of the application created to protect your API. `OPENAPI_CLIENT_ID` (optional) is the Client ID for the Swagger documentation to try the API.
 
 5. Run the server:
 
@@ -43,23 +46,13 @@ You can install the library using the [official link](https://intility.github.io
 
 ## Configuration
 
-### OpenAPI / Swagger configuration
-
-Ask for a new app registration in entra ID or another entry in shared application.
-
-Then configure Fast API:
-
-```python
-app = FastAPI(
-    swagger_ui_oauth2_redirect_url='/oauth2-redirect',
-    swagger_ui_init_oauth={
-        'usePkceWithAuthorizationCodeGrant': True,
-        'clientId': settings.APP_CLIENT_ID # or settings.OPENAPI_CLIENT_ID
-    },
-)
-```
-
 ### Fast API
+
+In order to configure Fast API application, please consider these steps
+
+- Create your application on App Portal
+  - This application must be of type **Web App**
+  - Configure the **redirect URI** to match any URL (not used)
 
 ```python
 azure_scheme = SingleTenantAzureAuthorizationCodeBearer(
@@ -71,8 +64,31 @@ azure_scheme = SingleTenantAzureAuthorizationCodeBearer(
 
 For the example, we use security on global endpoint:
 
-```
+```python
 app = FastAPI(dependencies=[Security(azure_scheme)])
+```
+
+### OpenAPI / Swagger configuration
+
+In order to use Swagger, please consider these steps:
+
+- Create another application in the App Portal to be used by the Swagger
+  - This application must be of type **SPA**
+  - Configure the **redirect URI** to match the one defined in `BACKEND_CORS_ORIGINS`
+- Your Entra ID's backend application must be configured to **expose an API** and having at least one custom scope
+- Then add to `api permissions` on Entra ID the scope you created
+
+Configure Fast API as is:
+
+```python
+app = FastAPI(
+   dependencies=[Security(azure_scheme)],
+    swagger_ui_oauth2_redirect_url='/oauth2-redirect',
+    swagger_ui_init_oauth={
+        'usePkceWithAuthorizationCodeGrant': True,
+        'clientId': settings.OPENAPI_CLIENT_ID
+    },
+)
 ```
 
 ## Documentation
