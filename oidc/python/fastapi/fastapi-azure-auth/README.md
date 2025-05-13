@@ -30,6 +30,8 @@ Implementation of OIDC and OAuth2 flow inside FastAPI.
    OPENAPI_CLIENT_ID=your_openapi_client_id
    ```
 
+   See below in the configuration part where to get the ID values
+
    Update `.env` file to adapt these variables.
 
    `APP_CLIENT_ID` must be the Client ID of the application created to protect your API. `OPENAPI_CLIENT_ID` (optional) is the Client ID for the Swagger documentation to try the API.
